@@ -299,5 +299,44 @@ namespace RockBoxPlaylistEditor
         {
 
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            MoveSelectedRow(-1); //Moveup
+        }
+
+        private void MoveSelectedRow(int direction)
+        {
+            // Exit if no cell is selected or multiple cells are selected
+            if (dataGridView1.SelectedCells.Count != 1)
+            {
+                MessageBox.Show("Please select a single cell to move its row.");
+                return;
+            }
+
+            // Get the selected cell
+            DataGridViewCell selectedCell = dataGridView1.SelectedCells[0];
+            int rowIndex = selectedCell.RowIndex;
+            int newRowIndex = rowIndex + direction;
+
+            // Exit if the new row index is out of bounds
+            if (newRowIndex < 0 || newRowIndex >= dataGridView1.Rows.Count)
+            {
+                return;
+            }
+
+            // Swap the rows
+            DataGridViewRow selectedRow = dataGridView1.Rows[rowIndex];
+            dataGridView1.Rows.Remove(selectedRow);
+            dataGridView1.Rows.Insert(newRowIndex, selectedRow);
+
+            // Reselect the moved cell
+            dataGridView1.ClearSelection();
+            dataGridView1.Rows[newRowIndex].Cells[selectedCell.ColumnIndex].Selected = true;
+        }
+        private void button8_Click(object sender, EventArgs e)
+        {
+            MoveSelectedRow(1); //Move down
+        }
     }
 }
