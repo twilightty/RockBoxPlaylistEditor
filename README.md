@@ -6,6 +6,8 @@
 # How to use?
 Select your m3u8 file at the top of the program, head to the `Playlists` folder created by Rockbox, then open the desired playlist you want to adjust
 
+**This program expects your iPod to be mounted as a letter, not a folder**
+
 You can also drag and drop multiple files to the window.
 
 After changes are staged, press apply to save the playlist to Rockbox.
