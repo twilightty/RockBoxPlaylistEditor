@@ -1,5 +1,7 @@
 # Rockbox Playlist Editor
 
+## This project is archived as of 10/5/2025, thanks to everyone for using my little tool!
+
 ![image](https://github.com/emladevops/RockBoxPlaylistEditor/assets/80335335/ceb61546-cebe-4a4e-8f8b-cc81a19b30a7)
 
 
